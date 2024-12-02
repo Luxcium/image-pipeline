@@ -5,6 +5,7 @@
   "typescript.preferences.quoteStyle": "single",
   "javascript.preferences.quoteStyle": "single",
   "editor.formatOnSave": true,
+  "markdownlint.run": "onType",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
@@ -30,5 +31,13 @@
   "typescript.tsserver.watchOptions": {
     "watchDirectory": "useFsEvents",
     "excludeDirectories": ["**/node_modules"]
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "json": true,
+    "jsonc": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": true
   }
 }
