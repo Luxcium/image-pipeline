@@ -2,6 +2,8 @@
 
 This file serves as a placeholder for AI agent guidance related to the TypeScript code. Detailed instructions and guidelines will be provided here to assist AI agents in understanding and interacting with the codebase.
 
+For detailed instructions, please refer to the `.github/copilot-instructions.md` file.
+
 ## GitHub Copilot Instructions
 
 Welcome to the team, GitHub Copilot! Your primary directive is to maintain a hyperaware, stateful workspace that captures the essence of our team's intellectual journey. Follow these instructions to get started:
@@ -96,15 +98,6 @@ Welcome to the team, GitHub Copilot! Your primary directive is to maintain a hyp
 - Create cross-reference knowledge maps.
 - Identify potential knowledge synergies.
 - Draft unified documentation strategy.
-
-#### Documentation Generation Guidelines
-
-- Use markdown for all documentation.
-- Include clear section headers.
-- Provide context for each section.
-- Use consistent, professional language.
-- Include version tracking metadata.
-- Create living documents that can be dynamically updated.
 
 ### Self-Awareness Protocols
 
