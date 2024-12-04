@@ -1,34 +1,72 @@
 # Project Overview
 
-This project is structured to support both Python and TypeScript development. The following directories are included:
-
-- **library/**: Contains Python code and related files.
-- **src/**: Contains TypeScript code.
-- **scripts/**: Contains shell scripts for environment management and other tasks.
+This project is structured to support both Python and TypeScript development, implementing an image processing pipeline with cross-language integration.
 
 ## Directory Structure
 
-- **library/**
-  - `src/`: Source code for the Python library.
-  - `tests/`: Test files for the Python library.
-  - `docs/`: Documentation for the Python library.
+📁 Project Root
 
-- **src/**: TypeScript source code.
+- [📁 **library/**](library/README.md): Python library implementation
+  - `src/`: Source code for the Python library
+  - `tests/`: Test files for the Python library
+  - `docs/`: Documentation for the Python library
+- [📁 **src/**](src/README.md): TypeScript implementation
+- [📁 **scripts/**](scripts/README.md): Environment management scripts
+- `progress.md`: Project progress tracking
+- `tasks.txt`: Task management
+- `cline.md`: AI agent instructions
 
-- **scripts/**: Shell scripts for managing the environment and other tasks.
+## Documentation Structure
+
+Each directory contains its own README.md with specific documentation:
+
+- [Library Documentation](library/README.md): Python library implementation details
+- [Source Documentation](src/README.md): TypeScript code structure and components
+- [Scripts Documentation](scripts/README.md): Environment management and utilities
 
 ## Folder Purposes and Relationships
 
-- **library/**: This directory is dedicated to Python development. It includes the main source code, tests, and documentation for the Python library. The `src/` subdirectory contains the core Python modules, while `tests/` holds unit and integration tests. The `docs/` folder provides detailed documentation for the library.
+### [Library Directory](library/README.md)
 
-- **src/**: This directory houses the TypeScript code, which forms the main application logic. It is designed to work in conjunction with the Python library, enabling cross-language functionality.
+The Python implementation directory contains:
 
-- **scripts/**: This directory contains shell scripts that facilitate environment setup, management, and verification. These scripts ensure that both Python and TypeScript environments are correctly configured and maintained.
+- Core image processing functionality
+- Python-specific utilities and helpers
+- Unit and integration tests
+- Library-specific documentation
+
+### [Source Directory](src/README.md)
+
+The TypeScript implementation directory includes:
+
+- Frontend application logic
+- Cross-language integration handlers
+- TypeScript-specific utilities
+
+### [Scripts Directory](scripts/README.md)
+
+Environment management utilities including:
+
+- Environment setup and configuration
+- Integration verification
+- Build and deployment tools
+
+## Project Status
+
+Current project status and progress are tracked in:
+
+- `progress.md`: Detailed progress tracking
+- `tasks.txt`: Task completion status
+- `cline.md`: AI agent operational guidelines
 
 ## Getting Started
 
-Instructions for setting up the project and running the code will be provided in the documentation files within each directory.
+1. Review the [Scripts Documentation](scripts/README.md) for environment setup
+2. Follow the [Library Documentation](library/README.md) for Python setup
+3. Check the [Source Documentation](src/README.md) for TypeScript setup
 
-## Progress Tracking
+## Additional Resources
 
-A progress tracking file will be maintained to document the current status, completed items, pending items, dependencies, and next steps.
+- See `progress.md` for current project status
+- Check `tasks.txt` for task tracking
+- Review `cline.md` for AI agent guidelines

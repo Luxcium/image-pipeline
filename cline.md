@@ -1,84 +1,181 @@
 # Special Instructions for Cline
 
-Here is a revised and **precise set of instructions** for **Cline** that avoids ambiguity, provides clear context, and aligns with all your stated preferences and requirements:
+Here is a revised and **precise set of instructions** for **Cline** that avoids ambiguity, provides clear context, and aligns with all stated preferences and requirements.
+
+## Table of Contents
+
+- [Special Instructions for Cline](#special-instructions-for-cline)
+  - [Table of Contents](#table-of-contents)
+  - [Cline Instructions](#cline-instructions)
+  - [Project Context](#project-context)
+  - [General Guidelines](#general-guidelines)
+  - [Package Management](#package-management)
+  - [Project Initialization](#project-initialization)
+  - [Code Conventions](#code-conventions)
+    - [JavaScript/TypeScript Standards](#javascripttypescript-standards)
+    - [Python Standards](#python-standards)
+    - [Shell Scripting Standards](#shell-scripting-standards)
+  - [Task Execution](#task-execution)
+  - [Modularity and Scalability](#modularity-and-scalability)
+    - [Structural Principles](#structural-principles)
+    - [Key Directories](#key-directories)
+  - [Error Handling](#error-handling)
+  - [Maintenance Guidelines](#maintenance-guidelines)
+    - [Purpose](#purpose)
+    - [Maintenance Principles](#maintenance-principles)
+  - [Related Documentation](#related-documentation)
+  - [Summary of Approach](#summary-of-approach)
 
 ## Cline Instructions
 
-Keep all the instruction for your operation well organized inside of teh root cline.md if any please read once and include in your tasks, make small changes as you are instructed to change your behaviour such as to keep a very well organised set of instructions
+This document serves as the comprehensive instruction set for AI agent operation, meticulously organized to provide clear, actionable guidance.
 
-### **General Guidelines**
+## Project Context
 
-- **Context-Specific Outputs**: Ensure all outputs and actions respect the context of the current programming language or framework. Do not apply irrelevant or generalized directives (e.g., avoid enforcing JavaScript/TypeScript conventions in other languages like Python or Bash).
-- **Conciseness and Clarity**: Use precise, direct language to avoid ambiguity. Follow the exact guidelines without assuming any flexibility unless explicitly stated.
+This project combines Python and TypeScript components with the following key aspects:
+
+- Python library in `library/` for core functionality
+- TypeScript implementation in `src/` for frontend operations
+- Integration testing framework for cross-language verification
+- Shell scripts in `scripts/` for environment management
+- Current focus: Build system integration and configuration
+
+## General Guidelines
+
+- Context-Specific Outputs: Adapt outputs to respect the specific context of the current programming language or framework
+- Conciseness and Clarity: Use precise, direct language to eliminate ambiguity
+- Adaptive Intelligence: Interpret instructions with nuanced understanding while maintaining strict adherence to core principles
+- Cross-Language Integration: Ensure seamless interaction between Python and TypeScript components
+
+## Package Management
+
+- Utilize pnpm exclusively for Node.js and TypeScript projects
+- Python dependency management through pip/poetry as specified in requirements.txt
+- Dependency management must rely on pnpm lock file for version control
+- Command-line execution is preferred for all package-related operations
+
+## Project Initialization
+
+- Use language-specific initialization tools:
+  - Node.js/TypeScript: `pnpm init`
+  - Python: `pip` or `poetry`
+  - PHP: `composer`
+- Ensure configuration aligns with best practices for the specific ecosystem
+
+## Code Conventions
+
+### JavaScript/TypeScript Standards
+
+- Strict TypeScript configuration:
+  - Enable `"strict"`, `"noImplicitAny"`, `"noImplicitThis"`, `"alwaysStrict"`
+- Naming Conventions:
+  - PascalCase for classes and types
+  - camelCase for functions and variables
+- Export Strategy:
+  - Prefer named exports
+  - Avoid default exports
+
+### Python Standards
+
+- Adhere to PEP 8 guidelines
+- Use explicit, descriptive naming
+- Prefer absolute import paths
+- Follow library/ structure for Python components
+
+### Shell Scripting Standards
+
+- Use POSIX-compliant syntax
+- Include comprehensive comments
+- Avoid hardcoded paths when possible
+- Follow scripts/ directory conventions
+
+## Task Execution
+
+- Prioritize command-line tools for:
+  - Project initialization
+  - Dependency management
+  - Script execution
+- Minimize direct file manipulation
+- Maintain non-destructive approach to existing resources
+- Use provided verification scripts for environment checks
+
+## Modularity and Scalability
+
+### Structural Principles
+
+- Separate concerns into distinct modules
+- Use clear, meaningful directory structures
+- Implement dependency injection
+- Create clear architectural boundaries
+- Maintain Python-TypeScript integration points
+
+### Key Directories
+
+- `src/`: TypeScript source code and frontend components
+- `library/`: Python library and core functionality
+- `tests/`: Testing infrastructure for both languages
+- `scripts/`: Environment and verification scripts
+- `docs/`: Project documentation
+
+## Error Handling
+
+- Implement comprehensive input validation
+- Use type assertions in TypeScript
+- Create robust error management strategies
+- Prevent unhandled exceptions
+- Ensure data integrity through strict validation
+- Handle cross-language communication errors
+
+## Maintenance Guidelines
+
+### Purpose
+
+- Primary instruction repository
+- Memory and preference management system
+- Operational parameter definition
+- Cross-language integration guidance
+
+### Maintenance Principles
+
+1. Periodic Review
+
+   - Regular accuracy assessment
+   - Update to reflect current best practices
+   - Verify cross-language compatibility
+
+2. Update Methodology
+
+   - Incremental modifications
+   - Preserve existing information
+   - Align with core ethical guidelines
+   - Maintain integration points
+
+3. Documentation Standards
+
+   - Maintain hierarchical structure
+   - Consistent markdown formatting
+   - Comprehensive navigation support
+   - Cross-reference related files
+
+4. Autonomous Decision Framework
+   - Assess change impact
+   - Consider long-term implications
+   - Implement only high-value modifications
+   - Ensure cross-component compatibility
+
+## Related Documentation
+
+- `progress.md`: Current project status and pending items
+- `tasks.txt`: Detailed task tracking and completion status
+- `library/docs/AI_agent_instructions.md`: Python-specific agent guidelines
+- `src/AI_agent_guidance.md`: TypeScript-specific agent guidelines
+
+## Summary of Approach
+
+A dynamic, context-aware instruction set designed to provide flexible yet precise operational guidance across diverse programming environments, with special attention to Python-TypeScript integration and build system configuration.
+
+**Critical Directive**: Maintain absolute fidelity to documented principles while allowing intelligent, contextual interpretation.
 
 ---
 
-#### **Package Management**
-
-- Always use **pnpm** for all Node.js and TypeScript-related projects.
-- Do not manually write version numbers in `package.json`. All dependency versions must be resolved and managed by the **pnpm lock file**.
-- For all dependency installations, use the **command line** to execute `pnpm` commands instead of manually editing configuration files.
-
----
-
-#### **Project Initialization**
-
-- Initialize Node.js and TypeScript projects with `pnpm init` and configure TypeScript using `pnpm add -D typescript`.
-- For other languages or frameworks, use their respective tools and conventions (e.g., `pip` for Python, `composer` for PHP) and ensure configuration aligns with best practices.
-
----
-
-#### **Code Conventions**
-
-1. **JavaScript/TypeScript**:
-
-   - Use **strict mode** in TypeScript configurations:
-     - Enable `"strict"`, `"noImplicitAny"`, `"noImplicitThis"`, and `"alwaysStrict"`.
-   - Avoid using default exports in JavaScript or TypeScript. Instead, always use named exports for consistency and clarity.
-   - Use PascalCase for class names and type definitions, camelCase for functions and variables.
-
-2. **Python**:
-
-   - Follow PEP 8 conventions for formatting and naming.
-   - Use explicit and descriptive function names.
-   - For imports, prefer explicit and absolute paths unless otherwise required.
-
-3. **Shell Scripting**:
-   - Use POSIX-compliant syntax for maximum compatibility.
-   - Always include comments explaining each step, especially for commands that have non-obvious effects.
-   - Avoid hardcoding paths unless explicitly required by the task.
-
----
-
-#### **Task Execution**
-
-- Prioritize using **command line tools** for tasks like project initialization, dependency installation, and running scripts where applicable.
-- Avoid overwriting or modifying existing files unless explicitly instructed to do so.
-
----
-
-#### **Modularity and Scalability**
-
-- Always structure projects with modularity in mind:
-
-  - Separate interfaces, utilities, services, and main application logic into distinct files or folders.
-  - Use meaningful directory names that reflect their content (e.g., `src`, `tests`, `utils`).
-
-- Ensure scalability by following these principles:
-  - Use dependency injection patterns where applicable.
-  - Avoid mixing business logic with infrastructure-related concerns (e.g., file I/O, database queries).
-  - Use clear boundaries between different layers of the project.
-
----
-
-#### **Error Handling**
-
-- Always validate inputs in public APIs or external-facing code.
-- Use guards or type assertions to ensure input correctness in TypeScript.
-- Implement error handling mechanisms to prevent unhandled exceptions or propagation of unvalidated data.
-
----
-
-### Summary of Approach
-
-This block of instructions contextualizes directives based on the current language or framework. Cline will execute tasks in adherence to these principles while considering the specific requirements of the programming environment.
+**Note**: This document represents the definitive operational blueprint. Modifications must be executed with extreme precision and thoughtful consideration.
