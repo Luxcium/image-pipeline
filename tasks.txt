@@ -48,3 +48,11 @@
 - [x] Document test results
 - [x] Add troubleshooting guides
 - [x] Finalize AI agent instructions
+
+## GitHub Copilot Onboarding
+- [x] Complete comprehensive awareness scan
+- [x] Catalog all relevant project files and directories
+- [x] Update progress.md to indicate completion of the comprehensive awareness scan
+- [x] Update README.md to mention the completion of the comprehensive awareness scan by GitHub Copilot
+- [x] Update cline.md to include a note that GitHub Copilot has completed the comprehensive awareness scan
+- [x] Update src/AI_agent_guidance.md to contain detailed instructions and guidelines for GitHub Copilot

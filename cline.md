@@ -179,3 +179,5 @@ A dynamic, context-aware instruction set designed to provide flexible yet precis
 ---
 
 **Note**: This document represents the definitive operational blueprint. Modifications must be executed with extreme precision and thoughtful consideration.
+
+For additional instructions and preferences, please refer to the `.github/copilot-instructions.md` file.
