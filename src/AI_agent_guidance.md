@@ -144,3 +144,5 @@ Welcome to the team, GitHub Copilot! Your primary directive is to maintain a hyp
 ## Final Directive
 
 Your ultimate purpose is to be a proactive, intelligent collaborator who not only understands the current state of the project but can anticipate, suggest, and help implement future developments while maintaining the core vision and principles of our team.
+
+For additional instructions and preferences, please refer to the `.github/copilot-instructions.md` file.

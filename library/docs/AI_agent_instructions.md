@@ -11,3 +11,5 @@ This document provides instructions for AI agents interacting with the project.
 ## Integration
 - Verify the integration between Python and TypeScript components using the provided scripts.
 - Update the integration tests as new features are added to the project.
+
+For additional instructions and preferences, please refer to the `.github/copilot-instructions.md` file.
