@@ -334,10 +334,6 @@ For TypeDoc, there are three main types of documentation tags:
 
 This guide makes sure that GitHub Copilot writes code that is easy to read and fix. It makes sure the code is consistent and high quality, so there’s less work to do later.
 
-## Conclusion
-
-By following these rules, GitHub Copilot will create code that is easier to understand and maintain. Keeping things simple and using good practices will help make the code strong and reliable for everyone.
-
 ## Additional Instructions and Preferences
 
 For additional instructions and preferences, please refer to the following files:
@@ -347,3 +343,8 @@ For additional instructions and preferences, please refer to the following files
 - `library/docs/AI_agent_instructions.md`
 
 The instructions from these files are now included in this file.
+
+## Conclusion
+
+By following these rules, GitHub Copilot will create code that is easier to understand and maintain. Keeping things simple and using good practices will help make the code strong and reliable for everyone.
+
