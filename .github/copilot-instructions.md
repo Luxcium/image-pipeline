@@ -348,3 +348,9 @@ The instructions from these files are now included in this file.
 
 By following these rules, GitHub Copilot will create code that is easier to understand and maintain. Keeping things simple and using good practices will help make the code strong and reliable for everyone.
 
+## Further Reading on Documentation Standards and Tools
+
+For more information on documentation standards and tools, refer to the following resources:
+
+- [TypeDoc Overview](https://typedoc.org/guides/overview/)
+- [TSDoc](https://tsdoc.org/)

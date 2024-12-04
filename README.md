@@ -76,8 +76,15 @@ Current project status and progress are tracked in:
 - Review `cline.md` for AI agent guidelines
 - Refer to `.github/copilot-instructions.md` for GitHub Copilot instructions and preferences
 
+### Documentation Tools
+
+- [TypeDoc Overview](https://typedoc.org/guides/overview/)
+- [TSDoc](https://tsdoc.org/)
+
+### Inactive URLs
+
+- The link to `library/README.md` is currently inactive and will be updated in the future.
 
 ## GitHub Copilot Instructions
 
 GitHub Copilot has completed a comprehensive awareness scan and cataloged all relevant project files and directories. For detailed instructions, please refer to [copilot.md](copilot.md).
-

@@ -5,7 +5,7 @@ This directory contains shell scripts for managing the environment, verification
 ## Documentation Navigation
 
 - [↑ Project Root](../README.md): Main project documentation
-- [→ Library](../library/README.md): Python implementation
+- [→ Library](../library/README.md): Python implementation (currently inactive, will be updated in the future)
 - [→ Source](../src/README.md): TypeScript implementation
 
 ## Available Scripts
@@ -91,7 +91,7 @@ This directory contains shell scripts for managing the environment, verification
 
 These scripts support the integration between:
 
-- [Python library](../library/README.md) components
+- [Python library](../library/README.md) components (currently inactive, will be updated in the future)
 - [TypeScript implementation](../src/README.md)
 
 ## Additional Resources
