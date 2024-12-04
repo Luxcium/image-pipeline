@@ -70,3 +70,7 @@ Current project status and progress are tracked in:
 - See `progress.md` for current project status
 - Check `tasks.txt` for task tracking
 - Review `cline.md` for AI agent guidelines
+
+## GitHub Copilot Instructions
+
+GitHub Copilot has completed a comprehensive awareness scan and cataloged all relevant project files and directories. For detailed instructions, please refer to [copilot.md](copilot.md).

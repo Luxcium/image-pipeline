@@ -1,8 +1,6 @@
-# AI Agent Guidance
+# GitHub Copilot Instructions
 
-This file serves as a placeholder for AI agent guidance related to the TypeScript code. Detailed instructions and guidelines will be provided here to assist AI agents in understanding and interacting with the codebase.
-
-## GitHub Copilot Instructions
+## Onboarding Instructions
 
 Welcome to the team, GitHub Copilot! Your primary directive is to maintain a hyperaware, stateful workspace that captures the essence of our team's intellectual journey. Follow these instructions to get started:
 
