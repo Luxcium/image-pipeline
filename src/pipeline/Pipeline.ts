@@ -1,35 +1,25 @@
-/**
- * Class for managing the flow of data and processors.
- */
-export class Pipeline<T> {
-  private processors: Array<Processor<T>> = [];
+import { Processor } from '../processors/Processor';
+import { Container } from '../containers/Container';
 
-  /**
-   * Adds a processor to the pipeline.
-   * @param processor - The processor to add.
-   */
-  addProcessor(processor: Processor<T>): void {
+export class Pipeline<TInput, TOutput> {
+  private processors: Processor<any, any>[] = [];
+
+  addProcessor<T, U>(processor: Processor<T, U>): Pipeline<TInput, U> {
     this.processors.push(processor);
+    return this as unknown as Pipeline<TInput, U>;
   }
 
-  /**
-   * Processes the given data through the pipeline.
-   * @param data - The data to process.
-   * @returns The processed data.
-   */
-  async processData(data: T): Promise<T> {
-    let processedData = data;
+  async executeSequentially(initialContainer: Container<TInput>): Promise<Container<TOutput>> {
+    let currentContainer: Container<any> = initialContainer;
     for (const processor of this.processors) {
-      processedData = await processor.process(processedData);
+      currentContainer = await processor(currentContainer);
     }
-    return processedData;
+    return currentContainer as Container<TOutput>;
   }
 
-  /**
-   * Handles errors that occur during processing.
-   * @param error - The error to handle.
-   */
-  handleError(error: Error): void {
-    console.error('Error occurred during processing:', error);
+  async executeInParallel(initialContainer: Container<TInput>): Promise<Container<TOutput>> {
+    const promises = this.processors.map((processor) => processor(initialContainer));
+    const results = await Promise.all(promises);
+    return results[results.length - 1] as Container<TOutput>;
   }
 }
