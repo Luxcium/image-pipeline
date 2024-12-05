@@ -5,7 +5,7 @@ import { promiseQueue } from '../pipeline/PromiseQueue';
 export const saveData: Processor<any, void> = (container) => {
   const promise = new Promise<void>((resolve) => {
     console.log('Data saved:', container.data);
-    resolve(new DataContainer(undefined));
+    resolve();
   });
 
   promiseQueue.enqueue(promise);
