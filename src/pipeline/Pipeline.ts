@@ -25,4 +25,11 @@ export class Pipeline<TInput, TOutput> {
     const results = await Promise.all(promises);
     return results[results.length - 1] as Container<TOutput>;
   }
+
+  executeUnawaited(initialContainer: Container<TInput>): void {
+    this.processors.forEach((processor) => {
+      const promise = processor(initialContainer);
+      promiseQueue.enqueue(promise);
+    });
+  }
 }
