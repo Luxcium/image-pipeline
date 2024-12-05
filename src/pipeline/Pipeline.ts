@@ -1,5 +1,8 @@
 import { Processor } from '../processors/Processor';
 import { Container } from '../containers/Container';
+import { PromiseQueue } from './PromiseQueue';
+
+const promiseQueue = new PromiseQueue();
 
 export class Pipeline<TInput, TOutput> {
   private processors: Processor<any, any>[] = [];
