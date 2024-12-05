@@ -37,6 +37,21 @@ This directory contains the TypeScript implementation of the image processing pi
   - Integrity checks
   - Error handling
 
+### Data Processing Framework
+
+- **containers/Container.ts**
+
+  - Data encapsulation interfaces and classes
+
+- **processors/Processor.ts**
+
+  - Modular units for processing operations
+
+- **pipeline/Pipeline.ts**
+
+  - Manages the flow of data and processors
+  - Handles asynchronous operations
+
 ## Integration Layer
 
 The TypeScript implementation serves as the frontend layer, integrating with the [Python library](../library/README.md) through defined interfaces. Key integration points include:
