@@ -18,3 +18,7 @@ echo '{
 }' > tsconfig.json
 mkdir -p src tests .vscode .github scripts
 touch src/index.ts README.md
+
+# Add linting and formatting scripts to package.json
+jq '.scripts.lint = "eslint \\"src/**/*.ts\\""' package.json > tmp.$$.json && mv tmp.$$.json package.json
+jq '.scripts.format = "prettier --write \\"src/**/*.ts\\""' package.json > tmp.$$.json && mv tmp.$$.json package.json
