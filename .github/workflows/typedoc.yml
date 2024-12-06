@@ -1,0 +1,19 @@
+name: Generate TypeDoc Documentation
+on:
+  push:
+    branches: [main]
+jobs:
+  generate-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Generate docs
+        run: pnpm typedoc
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: typedoc-html
+          path: docs
