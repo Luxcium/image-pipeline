@@ -7,7 +7,7 @@ export const fetchData: Processor<string, any> = async (container) => {
     const data = await response.json();
     return new DataContainer(data);
   } catch (error) {
-    console.error('Error fetching data:', error);
+    console.error('Error fetching data from URL:', container.data, 'Error:', error);
     throw error;
   }
 };
