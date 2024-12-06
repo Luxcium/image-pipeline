@@ -15,6 +15,9 @@ coverage/
 *.log
 EOL
 
+# Install pnpm globally
+npm i -g pnpm@latest
+
 # Initialize pnpm project
 pnpm init
 
