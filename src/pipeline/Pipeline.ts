@@ -15,15 +15,25 @@ export class Pipeline<TInput, TOutput> {
   async executeSequentially(initialContainer: Container<TInput>): Promise<Container<TOutput>> {
     let currentContainer: Container<any> = initialContainer;
     for (const processor of this.processors) {
-      currentContainer = await this.createUnawaitedPromise(processor, currentContainer);
+      try {
+        currentContainer = await this.createUnawaitedPromise(processor, currentContainer);
+      } catch (error) {
+        console.error('Error during sequential execution:', error);
+        throw error;
+      }
     }
     return currentContainer as Container<TOutput>;
   }
 
   async executeInParallel(initialContainer: Container<TInput>): Promise<Container<TOutput>> {
-    const promises = this.processors.map((processor) => this.createUnawaitedPromise(processor, initialContainer));
-    const results = await Promise.all(promises);
-    return results[results.length - 1] as Container<TOutput>;
+    try {
+      const promises = this.processors.map((processor) => this.createUnawaitedPromise(processor, initialContainer));
+      const results = await Promise.all(promises);
+      return results[results.length - 1] as Container<TOutput>;
+    } catch (error) {
+      console.error('Error during parallel execution:', error);
+      throw error;
+    }
   }
 
   executeUnawaited(initialContainer: Container<TInput>): void {
