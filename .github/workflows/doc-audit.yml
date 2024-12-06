@@ -1,0 +1,16 @@
+name: Weekly Documentation Audit
+on:
+  schedule:
+    - cron: "0 3 * * 1"
+jobs:
+  doc-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Generate TypeDoc JSON
+        run: pnpm typedoc --json docs.json
+      - name: Run Audit Script
+        run: node ./scripts/audit-docs.js

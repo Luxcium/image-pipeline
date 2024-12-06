@@ -1,0 +1,16 @@
+name: Documentation Check
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  doc-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: TypeDoc JSON Check
+        run: pnpm typedoc --json docs.json
+      - name: Validate Documentation Coverage
+        run: node ./scripts/validate-doc-coverage.js

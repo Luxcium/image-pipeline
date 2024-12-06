@@ -88,3 +88,22 @@ Current project status and progress are tracked in:
 ## GitHub Copilot Instructions
 
 GitHub Copilot has completed a comprehensive awareness scan and cataloged all relevant project files and directories. For detailed instructions, please refer to [copilot.md](copilot.md).
+
+## Using TypeDoc Effectively
+
+To ensure comprehensive and up-to-date documentation, follow these guidelines:
+
+1. **Run TypeDoc Locally**: Generate documentation locally to preview changes before committing.
+   ```bash
+   pnpm typedoc
+   ```
+
+2. **Check Copilot Instructions**: Review `copilot-instructions.md` for guidelines on maintaining and improving documentation quality.
+
+3. **Review Generated Docs**: Inspect the `docs/` folder to see the output and make incremental improvements to documentation comments.
+
+4. **Leverage TSDoc Tags**: Use TSDoc tags such as `@param`, `@returns`, and `@deprecated` to provide detailed information about the code.
+
+5. **Use TypeDoc Plugins**: Enhance documentation with plugins like `typedoc-plugin-markdown` and `typedoc-plugin-mdn-links`.
+
+By following these steps, you can ensure that the documentation remains accurate, comprehensive, and useful for all team members.
