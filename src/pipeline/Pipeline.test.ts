@@ -50,4 +50,20 @@ describe('Pipeline', () => {
 
     expect(promiseQueue['queue'].length).toBe(3);
   });
+
+  it('should create and enqueue unawaited promises', async () => {
+    const pipeline = new Pipeline<string, void>()
+      .addProcessor(fetchData)
+      .addProcessor(processData)
+      .addProcessor(saveData);
+
+    const initialContainer = new DataContainer('https://api.example.com/data');
+
+    const promise = pipeline['createUnawaitedPromise'](fetchData, initialContainer);
+    promiseQueue.enqueue(promise);
+
+    await promiseQueue.executeAllSequential();
+
+    expect(promiseQueue['queue'].length).toBe(0);
+  });
 });

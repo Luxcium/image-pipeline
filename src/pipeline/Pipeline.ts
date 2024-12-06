@@ -15,21 +15,27 @@ export class Pipeline<TInput, TOutput> {
   async executeSequentially(initialContainer: Container<TInput>): Promise<Container<TOutput>> {
     let currentContainer: Container<any> = initialContainer;
     for (const processor of this.processors) {
-      currentContainer = await processor(currentContainer);
+      currentContainer = await this.createUnawaitedPromise(processor, currentContainer);
     }
     return currentContainer as Container<TOutput>;
   }
 
   async executeInParallel(initialContainer: Container<TInput>): Promise<Container<TOutput>> {
-    const promises = this.processors.map((processor) => processor(initialContainer));
+    const promises = this.processors.map((processor) => this.createUnawaitedPromise(processor, initialContainer));
     const results = await Promise.all(promises);
     return results[results.length - 1] as Container<TOutput>;
   }
 
   executeUnawaited(initialContainer: Container<TInput>): void {
     this.processors.forEach((processor) => {
-      const promise = processor(initialContainer);
+      const promise = this.createUnawaitedPromise(processor, initialContainer);
       promiseQueue.enqueue(promise);
     });
+  }
+
+  private createUnawaitedPromise<T, U>(processor: Processor<T, U>, container: Container<T>): Promise<Container<U>> {
+    const promise = processor(container);
+    promiseQueue.enqueue(promise);
+    return promise;
   }
 }
