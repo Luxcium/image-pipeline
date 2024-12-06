@@ -8,7 +8,7 @@ const docsFilePath = './docs.json';
  */
 function auditDocs() {
   if (!fs.existsSync(docsFilePath)) {
-    console.error(`Documentation file not found: ${docsFilePath}`);
+    console.error(`Documentation JSON file not found: ${docsFilePath}`);
     process.exit(1);
   }
 
