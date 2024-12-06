@@ -107,3 +107,11 @@ To ensure comprehensive and up-to-date documentation, follow these guidelines:
 5. **Use TypeDoc Plugins**: Enhance documentation with plugins like `typedoc-plugin-markdown` and `typedoc-plugin-mdn-links`.
 
 By following these steps, you can ensure that the documentation remains accurate, comprehensive, and useful for all team members.
+
+## Installing pnpm Globally
+
+To install pnpm globally, run the following command:
+
+```bash
+npm i -g pnpm@latest
+```
