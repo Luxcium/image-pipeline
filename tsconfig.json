@@ -10,6 +10,6 @@
     "rootDir": "./src",
     "lib": ["es2015", "esnext", "dom"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "frontend/src/app/api", "frontend/src/app/auth", "frontend/src/middleware.ts"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

@@ -1,7 +1,6 @@
-import { Processor } from './Processor';
-import { DataContainer } from '../containers/DataContainer';
 
-export const saveData: Processor<any, void> = async (container) => {
+
+export const saveData  = async (container:any) => {
   const promise = new Promise<void>((resolve) => {
     try {
       console.log('Data saved:', container.data);
