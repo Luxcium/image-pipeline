@@ -6,12 +6,12 @@ This document provides instructions for setting up and running the frontend proj
 
 The frontend project is structured as follows:
 
-- `frontend2/`
+- `frontend/`
   - `README.md`: This file, containing setup and usage instructions.
   - `package.json`: Project metadata and dependencies.
   - `tsconfig.json`: TypeScript configuration.
-  - `tailwind.config.ts`: Tailwind CSS configuration.
-  - `postcss.config.mjs`: PostCSS configuration.
+  - `tailwind.config.js`: Tailwind CSS configuration.
+  - `postcss.config.js`: PostCSS configuration.
   - `src/`: Source code for the frontend project.
     - `styles/`: Global styles for the project.
     - `app/`: Application components.
@@ -41,7 +41,7 @@ Follow these steps to set up and run the frontend project:
 
    ```bash
    git clone <repository-url>
-   cd frontend2
+   cd frontend
    ```
 
 2. **Install dependencies:**
@@ -55,30 +55,19 @@ Follow these steps to set up and run the frontend project:
    - Initialize Tailwind:
 
      ```bash
-     pnpm dlx tailwindcss init -p
+     pnpx tailwindcss init -p
      ```
 
-   - Replace `tailwind.config.ts` content:
+   - Replace `tailwind.config.js` content:
 
-     ```typescript
-     import type { Config } from "tailwindcss";
-
-     export default {
-       content: [
-         "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-         "./components/**/*.{js,ts,jsx,tsx,mdx}",
-         "./app/**/*.{js,ts,jsx,tsx,mdx}",
-       ],
+     ```javascript
+     module.exports = {
+       content: ['./src/**/*.{js,ts,jsx,tsx}'],
        theme: {
-         extend: {
-           colors: {
-             background: "var(--background)",
-             foreground: "var(--foreground)",
-           },
-         },
+         extend: {},
        },
        plugins: [],
-     } satisfies Config;
+     };
      ```
 
    - Create `src/styles/globals.css` with the Tailwind directives:
@@ -94,7 +83,7 @@ Follow these steps to set up and run the frontend project:
    - Initialize Prisma:
 
      ```bash
-     pnpm dlx prisma init
+     pnpx prisma init
      ```
 
    - Update `prisma/schema.prisma` to include a basic `User` model:
@@ -145,7 +134,7 @@ Follow these steps to set up and run the frontend project:
    - Apply Prisma migrations:
 
      ```bash
-     pnpm dlx prisma migrate dev --name init
+     pnpx prisma migrate dev --name init
      ```
 
 7. **Add the `start` and `dev` scripts to `package.json`:**
@@ -164,7 +153,7 @@ Follow these steps to set up and run the frontend project:
 - Confirm Prisma setup by querying the database using `Prisma Studio`:
 
   ```bash
-  pnpm dlx prisma studio
+  pnpx prisma studio
   ```
 
 ## Additional Notes
