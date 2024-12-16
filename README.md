@@ -115,3 +115,78 @@ To install pnpm globally, run the following command:
 ```bash
 npm i -g pnpm@latest
 ```
+
+# Task 2: Implement Basic Authentication
+
+## Steps:
+
+1. Install dependencies:
+   ```bash
+   pnpm add next-auth bcrypt
+   ```
+
+2. Set up authentication:
+   - Create a file at `src/app/actions/auth.ts`:
+     ```typescript
+     import NextAuth from 'next-auth';
+     import GitHubProvider from 'next-auth/providers/github';
+
+     const authOptions = {
+       providers: [
+         GitHubProvider({
+           clientId: process.env.GITHUB_ID!,
+           clientSecret: process.env.GITHUB_SECRET!,
+         }),
+       ],
+       session: {
+         strategy: 'jwt',
+       },
+     };
+
+     const handler = NextAuth(authOptions);
+     export { handler as GET, handler as POST };
+     ```
+
+3. Secure pages:
+   - Wrap pages with `SessionProvider` in `src/app/layout.tsx`:
+     ```typescript
+     import { SessionProvider } from 'next-auth/react';
+
+     export default function RootLayout({ children }: { children: React.ReactNode }) {
+       return (
+         <html lang="en">
+           <body>
+             <SessionProvider>{children}</SessionProvider>
+           </body>
+         </html>
+       );
+     }
+     ```
+
+4. Add a protected page:
+   - Create `src/app/dashboard/page.tsx`:
+     ```typescript
+     import { getSession } from 'next-auth/react';
+
+     export default async function Dashboard() {
+       const session = await getSession();
+       if (!session) {
+         return <p>Access denied. Please log in.</p>;
+       }
+       return <h1>Welcome, {session.user?.email}</h1>;
+     }
+     ```
+
+5. Configure GitHub OAuth:
+   - Set environment variables placeholders in `.env.example`:
+     ```
+     GITHUB_ID=your-client-id
+     GITHUB_SECRET=your-client-secret
+     ```
+
+## Testing:
+- Verify login with GitHub and restricted access to `/dashboard`.
+- Test authentication flow and JWT validity in browser dev tools.
+https://nextjs.org/docs/app/building-your-application/authentication
+
+Remember to follow best practices in the next 15.1+ documentation in https://nextjs.org/docs/app/building-your-application/routing/middleware
