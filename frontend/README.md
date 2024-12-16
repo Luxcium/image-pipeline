@@ -1,173 +1,36 @@
-# Frontend Project
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-This document provides instructions for setting up and running the frontend project.
+## Getting Started
 
-## Project Structure
+First, run the development server:
 
-The frontend project is structured as follows:
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-- `frontend2/`
-  - `README.md`: This file, containing setup and usage instructions.
-  - `package.json`: Project metadata and dependencies.
-  - `tsconfig.json`: TypeScript configuration.
-  - `tailwind.config.ts`: Tailwind CSS configuration.
-  - `postcss.config.mjs`: PostCSS configuration.
-  - `src/`: Source code for the frontend project.
-    - `styles/`: Global styles for the project.
-    - `app/`: Application components.
-  - `prisma/`: Prisma configuration and schema.
-  - `docker-compose.yml`: Docker configuration for PostgreSQL.
-  - `.env`: Environment variables for the project.
-  - `.gitignore`: Files and directories to ignore in version control.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Dependencies
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-The frontend project relies on the following dependencies:
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- `next`: React framework for server-rendered applications.
-- `react`: JavaScript library for building user interfaces.
-- `react-dom`: Entry point to the DOM and server renderers for React.
-- `tailwindcss`: Utility-first CSS framework.
-- `postcss`: Tool for transforming CSS with JavaScript plugins.
-- `autoprefixer`: PostCSS plugin to parse CSS and add vendor prefixes.
-- `prisma`: Next-generation ORM for Node.js and TypeScript.
-- `@prisma/client`: Prisma client for database access.
+## Learn More
 
-## Setup Instructions
+To learn more about Next.js, take a look at the following resources:
 
-Follow these steps to set up and run the frontend project:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-1. **Clone the repository:**
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-   ```bash
-   git clone <repository-url>
-   cd frontend2
-   ```
+## Deploy on Vercel
 
-2. **Install dependencies:**
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-   ```bash
-   pnpm install
-   ```
-
-3. **Set up Tailwind CSS:**
-
-   - Initialize Tailwind:
-
-     ```bash
-     pnpm dlx tailwindcss init -p
-     ```
-
-   - Replace `tailwind.config.ts` content:
-
-     ```typescript
-     import type { Config } from "tailwindcss";
-
-     export default {
-       content: [
-         "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-         "./components/**/*.{js,ts,jsx,tsx,mdx}",
-         "./app/**/*.{js,ts,jsx,tsx,mdx}",
-       ],
-       theme: {
-         extend: {
-           colors: {
-             background: "var(--background)",
-             foreground: "var(--foreground)",
-           },
-         },
-       },
-       plugins: [],
-     } satisfies Config;
-     ```
-
-   - Create `src/styles/globals.css` with the Tailwind directives:
-
-     ```css
-     @tailwind base;
-     @tailwind components;
-     @tailwind utilities;
-     ```
-
-4. **Configure Prisma:**
-
-   - Initialize Prisma:
-
-     ```bash
-     pnpm dlx prisma init
-     ```
-
-   - Update `prisma/schema.prisma` to include a basic `User` model:
-
-     ```prisma
-     datasource db {
-       provider = "postgresql"
-       url      = env("DATABASE_URL")
-     }
-
-     generator client {
-       provider = "prisma-client-js"
-     }
-
-     model User {
-       id        Int      @id @default(autoincrement())
-       email     String   @unique
-       name      String?
-       createdAt DateTime @default(now())
-     }
-     ```
-
-5. **Set up Docker for PostgreSQL:**
-
-   - Create a `docker-compose.yml`:
-
-     ```yaml
-     version: '3.8'
-     services:
-       db:
-         image: postgres:15
-         environment:
-           POSTGRES_USER: postgres
-           POSTGRES_PASSWORD: password
-           POSTGRES_DB: myapp
-         ports:
-           - "5432:5432"
-     ```
-
-6. **Test Setup:**
-
-   - Run Docker:
-
-     ```bash
-     docker-compose up -d
-     ```
-
-   - Apply Prisma migrations:
-
-     ```bash
-     pnpm dlx prisma migrate dev --name init
-     ```
-
-7. **Add the `start` and `dev` scripts to `package.json`:**
-
-   ```json
-   "scripts": {
-     "dev": "next dev",
-     "build": "next build",
-     "start": "next start"
-   }
-   ```
-
-## Testing
-
-- Verify the Tailwind setup by creating a sample component in `src/app/page.tsx`.
-- Confirm Prisma setup by querying the database using `Prisma Studio`:
-
-  ```bash
-  pnpm dlx prisma studio
-  ```
-
-## Additional Notes
-
-- Ensure that you have Docker installed and running on your machine.
-- Update the `.env` file with the appropriate environment variables for your PostgreSQL database connection.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

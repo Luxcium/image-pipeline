@@ -46,6 +46,7 @@
     "typescript",
     "typescriptreact"
   ],
+  "material-icon-theme.activeIconPack": "react_redux",
   "prettier.requireConfig": true,
   "prettier.useEditorConfig": true
 }
