@@ -354,3 +354,7 @@ For more information on documentation standards and tools, refer to the followin
 
 - [TypeDoc Overview](https://typedoc.org/guides/overview/)
 - [TSDoc](https://tsdoc.org/)
+
+## Important Note
+
+Next.js 15.1+ emphasizes the use of server actions instead of the API folder. Update your code to reflect this change and follow best practices for securing server actions, such as authentication and authorization, input validation and sanitization, rate limiting, error handling, logging and monitoring, environment variables, secure headers, HTTPS, and dependency management.
