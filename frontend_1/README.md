@@ -32,6 +32,7 @@ The frontend project relies on the following dependencies:
 - `autoprefixer`: PostCSS plugin to parse CSS and add vendor prefixes.
 - `prisma`: Next-generation ORM for Node.js and TypeScript.
 - `@prisma/client`: Prisma client for database access.
+- `@prisma/client`: Prisma client for database access.
 
 ## Setup Instructions
 
@@ -120,7 +121,7 @@ Follow these steps to set up and run the frontend project:
            POSTGRES_PASSWORD: password
            POSTGRES_DB: myapp
          ports:
-           - "5432:5432"
+           - '5432:5432'
      ```
 
 6. **Test Setup:**
