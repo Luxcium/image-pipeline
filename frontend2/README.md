@@ -55,7 +55,7 @@ Follow these steps to set up and run the frontend project:
    - Initialize Tailwind:
 
      ```bash
-     pnpx tailwindcss init -p
+     pnpm dlx tailwindcss init -p
      ```
 
    - Replace `tailwind.config.ts` content:
@@ -94,7 +94,7 @@ Follow these steps to set up and run the frontend project:
    - Initialize Prisma:
 
      ```bash
-     pnpx prisma init
+     pnpm dlx prisma init
      ```
 
    - Update `prisma/schema.prisma` to include a basic `User` model:
@@ -145,7 +145,7 @@ Follow these steps to set up and run the frontend project:
    - Apply Prisma migrations:
 
      ```bash
-     pnpx prisma migrate dev --name init
+     pnpm dlx prisma migrate dev --name init
      ```
 
 7. **Add the `start` and `dev` scripts to `package.json`:**
@@ -164,7 +164,7 @@ Follow these steps to set up and run the frontend project:
 - Confirm Prisma setup by querying the database using `Prisma Studio`:
 
   ```bash
-  pnpx prisma studio
+  pnpm dlx prisma studio
   ```
 
 ## Additional Notes
